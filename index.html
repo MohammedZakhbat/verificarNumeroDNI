@@ -1,11 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./output.css">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Validador de DNI</title>
 </head>
-<body>
-    
+
+<body class="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-purple-100 flex items-center justify-center p-6">
+
+  <div class="w-full max-w-lg bg-white/80 backdrop-blur-xl shadow-2xl rounded-2xl border border-slate-200 p-8 space-y-6">
+
+    <div class="text-center space-y-2">
+      <div class="text-4xl">🪪</div>
+      <h1 class="text-2xl font-bold text-slate-800">
+        Validador de DNI
+      </h1>
+      <p class="text-sm text-slate-500">
+        Verifica la validez del DNI usando el algoritmo oficial
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <label class="text-sm font-medium text-slate-700">DNI</label>
+      <input
+        id="dniInput"
+        type="text"
+        placeholder="Ej: 12345678Z"
+        class="w-full p-4 border border-slate-300 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-blue-500 uppercase tracking-widest text-center text-lg transition"
+      />
+    </div>
+
+    <button
+      onclick="validarDNI()"
+      class="w-full py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 shadow-md hover:shadow-lg transition"
+    >
+      Validar DNI
+    </button>
+
+    <div class="grid grid-cols-2 gap-4">
+
+  <div class="rounded-xl p-4 text-center border" id="resultBox">
+    <p class="text-xs text-slate-500">Resultado</p>
+    <p id="result" class="text-lg font-bold mt-1">---</p>
+  </div>
+
+  <div class="rounded-xl p-4 text-center border" id="statusBox">
+    <p class="text-xs text-slate-500">Estado</p>
+    <p id="status" class="text-lg font-bold mt-1">Esperando</p>
+  </div>
+
+</div>
+
+    <p class="text-center text-xs text-slate-400">
+      Sistema de validación
+    </p>
+
+  </div>
+  <script src="app.js"></script> 
 </body>
 </html>
